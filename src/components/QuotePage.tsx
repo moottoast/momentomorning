@@ -8,7 +8,7 @@ export function QuotePage({ quote }: { quote: Quote }) {
       <main className="flex-1 flex flex-col items-center justify-center p-8 text-center">
         <VirtueLabel virtue={quote.virtue} />
 
-        <blockquote className="text-[1.75rem] leading-[1.7] font-light max-w-[600px] text-primary tracking-tight sm:text-[1.35rem] sm:leading-[1.65]">
+        <blockquote className="text-[1.35rem] leading-[1.65] sm:text-[1.75rem] sm:leading-[1.7] font-light max-w-[600px] text-primary tracking-tight">
           "{quote.quote_text}"
         </blockquote>
 
