@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Momento Morning
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quiet daily stoic practice. One quote, one moment, each morning.
 
-Currently, two official plugins are available:
+Momento Morning serves a single stoic quote each day — no feeds, no archives, no accounts. You open it, you read it, you sit with it. The quote is the hero, accompanied by a reflection prompt and a subtle virtue label tying it back to one of stoicism's four cardinal virtues: wisdom, courage, justice, and temperance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **Frontend:** React, Vite, Tailwind CSS v4
+- **Data:** Supabase (Postgres)
+- **Icons:** Phosphor Icons (light weight)
+- **Hosting:** Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js 18+
+- A [Supabase](https://supabase.com) project
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env.local
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Edit `.env.local` with your Supabase project URL and anon key (found in Supabase Dashboard > Settings > API).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Database
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Run the migration in your Supabase SQL Editor:
+
+1. Go to your Supabase project > **SQL Editor**
+2. Paste the contents of [`supabase/migrations/001_create_quotes.sql`](supabase/migrations/001_create_quotes.sql)
+3. Click **Run**
+
+This creates the `quotes` table, enables Row Level Security (read-only public access), and seeds a few sample quotes.
+
+### Importing Quotes
+
+See the [Importing Quotes Guide](docs/importing-quotes.md) for instructions on loading content from CSV files.
+
+### Development
+
+```bash
+npm run dev
 ```
+
+### Tests
+
+```bash
+npx vitest run
+```
+
+## How It Works
+
+The app determines the visitor's local date, then queries Supabase for the most recent quote matching that month and day. This allows year-over-year rotation — add quotes for 2027 and they'll automatically take priority over 2026 entries for the same dates.
+
+If no quote exists for today, a fallback quote from Seneca is displayed.
+
+## Content Model
+
+Each daily entry has four fields:
+
+| Field | Description |
+|-------|-------------|
+| `quote_text` | The stoic quote |
+| `attribution` | Source (e.g., "Marcus Aurelius, Meditations V.16") |
+| `reflection` | A prompt connecting the quote to daily life |
+| `virtue` | One of: `wisdom`, `courage`, `justice`, `temperance` |
+
+---
+
+Made with love by 13 Guys Named Ed in sunny Clearwater, Florida.
