@@ -51,6 +51,10 @@ See the [Importing Quotes Guide](docs/importing-quotes.md) for instructions on l
 npm run dev
 ```
 
+### Deploying to Vercel
+
+See the [Deployment Guide](docs/deploying-to-vercel.md) for connecting Supabase and deploying to Vercel without exposing secrets.
+
 ### Tests
 
 ```bash
