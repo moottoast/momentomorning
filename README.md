@@ -37,9 +37,13 @@ Run the migration in your Supabase SQL Editor:
 
 This creates the `quotes` table, enables Row Level Security (read-only public access), and seeds a few sample quotes.
 
+### Content Development
+
+The [`content/`](content/) folder is the working space for drafting and reviewing quotes before import. It includes a [Content Guide](content/CONTENT-GUIDE.md) with schema rules, quality standards, and coverage goals, plus an [Agent Prompts](content/AGENT-PROMPTS.md) reference for using AI agents to help develop content at scale.
+
 ### Importing Quotes
 
-See the [Importing Quotes Guide](docs/importing-quotes.md) for instructions on loading content from CSV files.
+See the [Importing Quotes Guide](docs/importing-quotes.md) for instructions on loading finalized content from CSV files into Supabase.
 
 ### Development
 
