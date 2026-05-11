@@ -33,6 +33,11 @@ describe("QuotePage", () => {
     expect(screen.getByText("Wisdom")).toBeInTheDocument();
   });
 
+  it("renders the quote date as today's entry", () => {
+    render(<QuotePage quote={mockQuote} />);
+    expect(screen.getByText("Today / Sunday, May 10")).toBeInTheDocument();
+  });
+
   it("renders the footer", () => {
     render(<QuotePage quote={mockQuote} />);
     expect(screen.getByText(/13 Guys Named Ed/)).toBeInTheDocument();
