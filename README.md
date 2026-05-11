@@ -78,6 +78,10 @@ Each daily entry has four fields:
 | `reflection` | A prompt connecting the quote to daily life |
 | `virtue` | One of: `wisdom`, `courage`, `justice`, `temperance` |
 
+## License
+
+This project is open source under the [MIT License](LICENSE).
+
 ---
 
 Made with love by 13 Guys Named Ed in sunny Clearwater, Florida.
