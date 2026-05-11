@@ -1,6 +1,6 @@
 # Deploying to Vercel
 
-How to connect Momento Morning to Supabase and deploy on Vercel without exposing secrets.
+How to connect Memento Morning to Supabase and deploy on Vercel without exposing secrets.
 
 ## What Gets Exposed (and Why That's OK)
 
@@ -35,7 +35,7 @@ If you ran the migration from [`001_create_quotes.sql`](../supabase/migrations/0
 
 1. Go to [vercel.com](https://vercel.com) and sign in
 2. Click **Add New** > **Project**
-3. Import your GitHub repository (`momentomorning`)
+3. Import your GitHub repository (`mementomorning`)
 4. Vercel will auto-detect the Vite framework — the default settings are correct:
    - **Build Command:** `vite build`
    - **Output Directory:** `dist`
@@ -72,7 +72,7 @@ Every push to `main` triggers a new deployment automatically.
 ## Custom Domain (Optional)
 
 1. In Vercel, go to **Settings > Domains**
-2. Add your domain (e.g., `momentomorning.com`)
+2. Add your domain (e.g., `mementomorning.com`)
 3. Vercel will provide DNS records to configure with your registrar
 4. SSL is automatic
 

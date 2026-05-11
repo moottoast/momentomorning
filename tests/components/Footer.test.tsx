@@ -5,7 +5,7 @@ import { Footer } from "../../src/components/Footer";
 describe("Footer", () => {
   it("renders the project name", () => {
     render(<Footer />);
-    expect(screen.getByText(/Momento Morning/)).toBeInTheDocument();
+    expect(screen.getByText(/Memento Morning/)).toBeInTheDocument();
   });
 
   it("renders the creator credit", () => {

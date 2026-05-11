@@ -1,8 +1,8 @@
-# Momento Morning
+# Memento Morning
 
 A quiet daily stoic practice. One quote, one moment, each morning.
 
-Momento Morning serves a single stoic quote each day — no feeds, no archives, no accounts. You open it, you read it, you sit with it. The quote is the hero, accompanied by a reflection prompt and a subtle virtue label tying it back to one of stoicism's four cardinal virtues: wisdom, courage, justice, and temperance.
+Memento Morning serves a single stoic quote each day — no feeds, no archives, no accounts. You open it, you read it, you sit with it. The quote is the hero, accompanied by a reflection prompt and a subtle virtue label tying it back to one of stoicism's four cardinal virtues: wisdom, courage, justice, and temperance.
 
 ## Tech Stack
 
@@ -54,6 +54,8 @@ npm run dev
 ### Deploying to Vercel
 
 See the [Deployment Guide](docs/deploying-to-vercel.md) for connecting Supabase and deploying to Vercel without exposing secrets.
+
+If you are finishing the old-to-new name migration, use the [Rename Runbook](docs/rename-to-mementomorning.md) for the GitHub, Vercel, DNS, and Supabase dashboard steps.
 
 ### Tests
 

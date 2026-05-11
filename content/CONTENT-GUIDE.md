@@ -1,6 +1,6 @@
 # Content Development Guide
 
-This folder is the working space for building daily stoic quotes for Momento Morning. Use it to draft, review, and finalize CSV files before importing them into Supabase.
+This folder is the working space for building daily stoic quotes for Memento Morning. Use it to draft, review, and finalize CSV files before importing them into Supabase.
 
 For import instructions, see the [Importing Quotes Guide](../docs/importing-quotes.md).
 

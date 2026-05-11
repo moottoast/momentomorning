@@ -1,6 +1,6 @@
 # Agent Prompting Guide
 
-Prompts for working with AI agents to develop Momento Morning quote content. Read [CONTENT-GUIDE.md](CONTENT-GUIDE.md) first for schema, quality standards, and goals.
+Prompts for working with AI agents to develop Memento Morning quote content. Read [CONTENT-GUIDE.md](CONTENT-GUIDE.md) first for schema, quality standards, and goals.
 
 ## Critical: Authenticity and Deduplication
 
@@ -132,7 +132,7 @@ date,quote_text,attribution,reflection,virtue
 ## Quality Review
 
 ```
-Review this CSV of stoic quotes for Momento Morning:
+Review this CSV of stoic quotes for Memento Morning:
 
 [PASTE CSV OR REFERENCE FILE]
 

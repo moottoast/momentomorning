@@ -1,4 +1,4 @@
-# Momento Morning Implementation Plan
+# Memento Morning Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -8,14 +8,14 @@
 
 **Tech Stack:** React 19, Vite, Tailwind CSS v4, Supabase JS client, Phosphor Icons (light weight), Vitest + React Testing Library, deployed to Vercel.
 
-**Design Spec:** `docs/superpowers/specs/2026-05-10-momento-morning-design.md`
+**Design Spec:** `docs/superpowers/specs/2026-05-10-memento-morning-design.md`
 
 ---
 
 ## File Structure
 
 ```
-momentomorning/
+mementomorning/
 ├── index.html                    # Vite entry point with Inter font, meta tags
 ├── vite.config.ts                # Vite config
 ├── tailwind.config.ts            # Tailwind config with custom colors/fonts
@@ -113,7 +113,7 @@ Update `index.html` — add to `<head>`:
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 ```
 
-Update the `<title>` to `Momento Morning`.
+Update the `<title>` to `Memento Morning`.
 
 - [ ] **Step 6: Create .env.example**
 
@@ -143,7 +143,7 @@ Remove default Vite files that won't be used:
 
 ```tsx
 export default function App() {
-  return <div>Momento Morning</div>;
+  return <div>Memento Morning</div>;
 }
 ```
 
@@ -168,7 +168,7 @@ createRoot(document.getElementById("root")!).render(
 npm run dev
 ```
 
-Expected: Dev server starts, browser shows "Momento Morning" on a `#f8f9fb` background with Inter font.
+Expected: Dev server starts, browser shows "Memento Morning" on a `#f8f9fb` background with Inter font.
 
 - [ ] **Step 10: Commit**
 
@@ -573,7 +573,7 @@ import { Footer } from "../../src/components/Footer";
 describe("Footer", () => {
   it("renders the project name", () => {
     render(<Footer />);
-    expect(screen.getByText(/Momento Morning/)).toBeInTheDocument();
+    expect(screen.getByText(/Memento Morning/)).toBeInTheDocument();
   });
 
   it("renders the creator credit", () => {
@@ -604,7 +604,7 @@ Create `src/components/Footer.tsx`:
 export function Footer() {
   return (
     <footer className="p-8 text-center text-xs text-secondary tracking-wide leading-relaxed">
-      <p>Momento Morning · A quiet daily practice</p>
+      <p>Memento Morning · A quiet daily practice</p>
       <p>
         Made with <span className="text-heart">♥</span> by 13 Guys Named Ed in
         sunny Clearwater, Florida
@@ -959,7 +959,7 @@ Visit the Vercel deployment URL. Confirm:
 
 - [ ] **Step 4: Configure custom domain (when ready)**
 
-In Vercel project settings → Domains → add `momentomorning.com`. Follow DNS configuration instructions.
+In Vercel project settings → Domains → add `mementomorning.com`. Follow DNS configuration instructions.
 
 ---
 

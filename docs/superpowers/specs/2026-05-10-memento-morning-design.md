@@ -1,8 +1,8 @@
-# Momento Morning — Design Spec
+# Memento Morning — Design Spec
 
 ## Overview
 
-Momento Morning is a single-screen daily stoic quote web app at momentomorning.com. One quote per day, no interaction, no accounts, no archive. A quiet morning practice inspired by The Daily Stoic but with the quote itself as the hero rather than the headline.
+Memento Morning is a single-screen daily stoic quote web app at mementomorning.com. One quote per day, no interaction, no accounts, no archive. A quiet morning practice inspired by The Daily Stoic but with the quote itself as the hero rather than the headline.
 
 The design intentionally reflects modern stoicism's contemplative character and avoids any association with "broicism" or hustle culture.
 
@@ -69,7 +69,7 @@ A single full-viewport page with vertically and horizontally centered content. N
 
 4. **Reflection prompt** — Medium-small text below the attribution, slightly more prominent than the attribution but clearly secondary to the quote. A question that connects the ancient wisdom to the reader's day.
 
-5. **Footer** — Small, muted: "Momento Morning · A quiet daily practice" / "Made with ♥ by 13 Guys Named Ed in sunny Clearwater, Florida"
+5. **Footer** — Small, muted: "Memento Morning · A quiet daily practice" / "Made with ♥ by 13 Guys Named Ed in sunny Clearwater, Florida"
 
 ### Visual Style
 
@@ -84,7 +84,7 @@ None. No buttons, no clicks, no hover states beyond the browser default. The app
 
 ## Data Flow
 
-1. Visitor opens momentomorning.com
+1. Visitor opens mementomorning.com
 2. React app mounts, determines the visitor's local date (month and day)
 3. App queries Supabase for the matching quote (most recent year with that month/day)
 4. Quote renders with a simple fade or instant display
