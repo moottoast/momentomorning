@@ -25,6 +25,38 @@ Each quote has these fields:
 
 ## Content Goals
 
+### Translation and Source Standards
+
+Use modern, reputable translations as the default source for quote text. The app should feel ancient in wisdom, not antique in diction.
+
+Preferred source editions:
+
+| Source material | Preferred modern editions | Avoid as default |
+|-----------------|---------------------------|------------------|
+| Marcus Aurelius, *Meditations* | Gregory Hays, *Meditations* (Modern Library, 2002); Robin Waterfield, *Meditations: The Annotated Edition* (Basic Books, 2021/2022); Robin Hard, *Meditations with Selected Correspondence* (Oxford World's Classics, 2011) | George Long, Meric Casaubon, or other public-domain versions with "thou," "doth," "soever," etc. |
+| Epictetus, *Discourses*, *Enchiridion/Handbook*, fragments | Robin Hard, *Discourses, Fragments, Handbook* (Oxford World's Classics, 2014); Robert Dobbin, *Discourses and Selected Writings* (Penguin, 2008); Anthony A. Long, *How to Be Free* (Princeton, 2018) for the *Enchiridion* | Elizabeth Carter, Thomas Wentworth Higginson, or older public-domain renderings unless no modern source is available |
+| Seneca, *Letters* | Margaret Graver and A. A. Long, *Letters on Ethics: To Lucilius* (University of Chicago Press, 2015) | Older public-domain letter translations when they sound formal, Latinate, or sermon-like |
+| Seneca, essays including *On Anger*, *On Providence*, *On the Shortness of Life*, *On Tranquility of Mind*, *On the Happy Life* | University of Chicago Press's Complete Works series, especially Robert A. Kaster and Martha C. Nussbaum, *Anger, Mercy, Revenge* (2010); Gareth D. Williams, *Selected Moral Dialogues* (2014); Elaine Fantham, Harry M. Hine, James Ker, and Gareth D. Williams, *Hardship and Happiness* (2014) | Clunky excerpted public-domain translations pulled from quote sites |
+| Musonius Rufus | Cynthia King, *Musonius Rufus: Lectures and Sayings* (2011); Cora Lutz, *Musonius Rufus: "The Roman Socrates"* (1947/2020 reprint) when King is unavailable | Unsourced web summaries or paraphrases |
+| Cleanthes, Zeno, Chrysippus, Hierocles, Posidonius, and other early Stoic fragments | A. A. Long and D. N. Sedley, *The Hellenistic Philosophers* (1987); Brad Inwood and Lloyd P. Gerson, *The Stoics Reader* (Hackett, 2008); Hans von Arnim/source-fragment references only with a readable modern translation | Victorian poetic translations selected only because they are easy to find online |
+| Cato the Younger | Modern translations of Plutarch's *Life of Cato the Younger* and Lucan's *Civil War*, with the ancient witness named in the attribution | Internet quotation collections attributed only to "Cato" |
+
+When using a copyrighted modern translation, work from an authorized copy or a legitimate preview available to the content producer. Keep each quote short enough for a daily quote app and cite the ancient work and passage in `attribution`; keep translator/source notes in the drafting review if needed.
+
+### Quote Voice and Recitation
+
+Prefer passages that can be read aloud naturally on the first try. A quote should land like a bell, not like homework.
+
+Selection rules:
+
+- Choose complete thoughts, not orphaned logical fragments. Reject lines like "If law, then are we fellow-citizens" unless the surrounding passage is supplied in a clear modern translation.
+- Prefer concrete images, strong verbs, and human stakes: fire testing gold, attention returning to the present, anger losing its grip, duty to the common good.
+- Prefer concise passages, usually 8-35 words. Longer quotes are acceptable only when their rhythm is clear and the sentence remains easy to speak.
+- Avoid archaic diction: `thou`, `thee`, `thy`, `doth`, `hast`, `soever`, `whensoever`, `whereof`, `nought`, `straightway`, `yea`.
+- Avoid stiff translation artifacts: inverted word order, unexplained parentheticals, bracketed glosses, fragmentary clauses, and punctuation that obscures how to recite the line.
+- Do not modernize a quote by paraphrasing. If the available wording is ugly, choose a different real passage or a different modern translation of the same passage.
+- Favor quotes that are inspiring without becoming self-help slogans. The line should still sound like Stoic philosophy: disciplined, humane, clear-eyed, and exact.
+
 ### Philosopher Coverage
 
 Draw from the full breadth of stoic philosophy, not just the "big three." Aim for a mix across the year:
@@ -111,6 +143,8 @@ Before finalizing a CSV batch:
 - [ ] Every `date` is unique and in `YYYY-MM-DD` format
 - [ ] Every `virtue` is exactly one of: `wisdom`, `courage`, `justice`, `temperance`
 - [ ] Attributions include the specific work and passage when known
+- [ ] Quote text comes from a preferred modern translation or another explicitly approved readable source
+- [ ] Quotes pass the read-aloud test: clear, complete, recitable, and free of archaic diction
 - [ ] Reflections are questions (end with `?`), not statements
 - [ ] No duplicate quotes across batches
 - [ ] Philosopher mix is varied (not 90% Marcus Aurelius)
