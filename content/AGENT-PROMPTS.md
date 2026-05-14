@@ -4,11 +4,49 @@ Prompts for working with AI agents to develop Memento Morning quote content. Rea
 
 ## Critical: Authenticity and Deduplication
 
-Every prompt below includes these two non-negotiable rules. When customizing prompts, always keep them:
+Every prompt below includes these non-negotiable rules. When customizing prompts, always keep them:
 
 1. **No fabricated quotes.** Every quote must be a real, verifiable passage from a real stoic text. Do not paraphrase, combine, or invent quotes. Do not attribute a quote to a philosopher unless you can cite the specific work and passage. If you cannot find a real quote that fits a theme, say so — do not fill the gap with a made-up one.
 
 2. **No duplicates across the year.** Before generating, review all existing CSV files in this folder to ensure no quote_text is repeated. Each day of the year must have a unique quote. If you are provided existing content, check against it.
+
+3. **Modern, recitable translations.** Prefer reputable modern translations listed in [CONTENT-GUIDE.md](CONTENT-GUIDE.md). Avoid archaic public-domain diction and fragmentary phrasing. If a passage sounds awkward aloud, choose another real passage or another modern translation.
+
+4. **Poetic without paraphrase.** The quote should be vivid, clear, and inspiring, but it must remain verbatim from the chosen translation. Do not "improve" a clumsy quote by rewriting it.
+
+## Modern Translation Preferences
+
+Use these source editions first when producing or replacing quote text:
+
+- Marcus Aurelius: Gregory Hays, *Meditations* (Modern Library, 2002); Robin Waterfield, *Meditations: The Annotated Edition* (Basic Books, 2021/2022); Robin Hard, *Meditations with Selected Correspondence* (Oxford World's Classics, 2011)
+- Epictetus: Robin Hard, *Discourses, Fragments, Handbook* (Oxford World's Classics, 2014); Robert Dobbin, *Discourses and Selected Writings* (Penguin, 2008); Anthony A. Long, *How to Be Free* (Princeton, 2018) for the *Enchiridion*
+- Seneca, *Letters*: Margaret Graver and A. A. Long, *Letters on Ethics: To Lucilius* (University of Chicago Press, 2015)
+- Seneca, essays: University of Chicago Press's Complete Works series, especially Robert A. Kaster and Martha C. Nussbaum, *Anger, Mercy, Revenge* (2010); Gareth D. Williams, *Selected Moral Dialogues* (2014); Elaine Fantham, Harry M. Hine, James Ker, and Gareth D. Williams, *Hardship and Happiness* (2014)
+- Musonius Rufus: Cynthia King, *Musonius Rufus: Lectures and Sayings* (2011); Cora Lutz, *Musonius Rufus: "The Roman Socrates"* (1947/2020 reprint) only when King is unavailable
+- Cleanthes, Zeno, Chrysippus, Hierocles, Posidonius, and other fragments: A. A. Long and D. N. Sedley, *The Hellenistic Philosophers* (1987); Brad Inwood and Lloyd P. Gerson, *The Stoics Reader* (Hackett, 2008)
+- Cato the Younger: modern translations of Plutarch's *Life of Cato the Younger* and Lucan's *Civil War*, with the ancient witness named in the attribution
+
+Avoid George Long, Meric Casaubon, Elizabeth Carter, Thomas Wentworth Higginson, and other old public-domain translations as defaults. They may be useful for passage discovery, but the final `quote_text` should come from a modern, readable translation whenever possible.
+
+## Poetic Quality Screen
+
+Before accepting a quote, read it aloud. Keep it only if the line is clear on the first reading and has some force, music, or image.
+
+Prefer:
+
+- complete thoughts rather than fragments
+- concrete imagery and strong verbs
+- humane, direct, memorable lines
+- concise passages, usually 8-35 words
+- punctuation that tells the reader how to breathe
+
+Reject:
+
+- orphaned fragments like "If law, then are we fellow-citizens"
+- archaic diction: `thou`, `thee`, `thy`, `doth`, `hast`, `soever`, `whensoever`, `whereof`, `nought`, `straightway`, `yea`
+- inverted syntax that sounds like homework
+- parenthetical translation glosses inside the quote
+- lines that require a reflection question to explain what the quote itself means
 
 ## Generating a Month of Quotes
 
@@ -32,6 +70,14 @@ Authenticity (MANDATORY):
 - Do NOT attribute a quote to a philosopher unless you can cite the specific work and passage
 - If you cannot find a real quote for a date, leave that row out and say which dates need manual attention
 
+Translation quality (MANDATORY):
+- Use reputable modern translations wherever possible; follow the source preferences in CONTENT-GUIDE.md
+- Avoid archaic public-domain wording unless no modern translation exists for that source
+- Do NOT include archaic diction such as thou, thee, thy, doth, hast, soever, whensoever, whereof, nought, straightway, or yea
+- Do NOT use fragmentary lines that are grammatically awkward or unclear out of context
+- Each quote should pass a read-aloud test: clear, recitable, inspiring, and naturally punctuated
+- Do NOT paraphrase to make a quote prettier; choose a better real passage or better modern translation
+
 Deduplication (MANDATORY):
 - Do NOT repeat any quote_text already used in other months
 - Here are the quotes already used in other CSV files in this project:
@@ -48,6 +94,7 @@ Content goals:
 - Draw from at least 4 different philosophers across the month
 - Distribute virtues roughly evenly (≈25% each)
 - Reflections should be personal and actionable, not abstract
+- Quotes should feel poetic through selection, not invention: vivid images, strong verbs, memorable cadence, and complete thoughts
 
 Output the raw CSV with no commentary.
 ```
@@ -75,6 +122,11 @@ Rules:
 Authenticity (MANDATORY):
 - Every quote must be a real, verifiable passage — no fabrications or paraphrases
 - If no real stoic quote fits a holiday theme, say so rather than inventing one
+
+Translation quality (MANDATORY):
+- Use reputable modern translations wherever possible; follow the source preferences in CONTENT-GUIDE.md
+- Avoid archaic diction, awkward fragments, and punctuation that makes the line hard to recite
+- Do NOT paraphrase to improve style; select a better real passage
 
 Deduplication (MANDATORY):
 - Do NOT reuse any quote_text from existing content:
@@ -106,6 +158,11 @@ Authenticity (MANDATORY):
 - Every quote must be a real, verifiable passage from the cited work
 - For lesser-known philosophers with limited surviving texts, it is better to provide fewer genuine quotes than to fill gaps with fabrications
 - If a philosopher's surviving fragments are exhausted, say so
+
+Translation quality (MANDATORY):
+- Use reputable modern translations wherever possible; follow the source preferences in CONTENT-GUIDE.md
+- Avoid archaic diction, awkward fragments, and punctuation that makes the line hard to recite
+- Do NOT paraphrase to improve style; select a better real passage
 
 Deduplication (MANDATORY):
 - Do NOT reuse any quote_text from existing content:
@@ -150,6 +207,10 @@ Check for:
 8. Is the virtue distribution roughly balanced?
 9. Do holiday-adjacent dates have thematically appropriate quotes?
 10. For each quote, does it appear to be a real, verifiable passage? Flag any that look paraphrased, combined from multiple sources, or potentially fabricated.
+11. Does each quote appear to come from a modern, readable translation rather than an archaic public-domain source?
+12. Does each quote pass the read-aloud test: clear, poetic, complete, and naturally punctuated?
+13. Flag any quote containing archaic diction such as thou, thee, thy, doth, hast, soever, whensoever, whereof, nought, straightway, or yea.
+14. Flag any quote that is too fragmentary or obscure to be inspiring without explanation.
 
 Report issues as a numbered list with the affected date and what needs fixing.
 ```
@@ -168,21 +229,26 @@ a quote than publish a fake one.
 For each quote, answer:
 1. Is this a real, verbatim quote from this philosopher? (not paraphrased, not combined from multiple passages, not a modern invention commonly misattributed to stoics)
 2. Is the source citation correct — right work, right book/letter/chapter number?
-3. Can this quote be found in a standard translation of the cited work?
+3. Can this quote be found in a standard modern translation of the cited work?
+4. Which translation/source edition does the wording appear to come from?
+5. Does the quote pass the Memento Morning voice standard: modern, poetic, recitable, and clear without explanation?
 
 Classify each quote as:
 - VERIFIED — you are confident this is real and correctly cited
 - CORRECTED — the quote is real but the citation needs fixing (provide the fix)
 - SUSPECT — you are not confident this is a real quote (explain why)
 - FABRICATED — this does not appear in the cited work
+- REAL BUT REWRITE SOURCE — the passage is real, but this wording is archaic, awkward, fragmentary, or not suitable for the app; recommend a modern translation or a different passage
 
 Be aggressive about flagging suspects. Common red flags:
 - Quotes that sound too modern or self-help-y
 - Vague attributions like "Stoic proverb" or just a philosopher name with no work cited
 - Quotes that appear only on internet quote sites but not in actual translations
 - Passages that combine ideas from multiple places into one "quote"
+- Archaic public-domain diction used as final quote text
+- Lines whose meaning depends on surrounding context that has been omitted
 
-Output a summary table: how many verified, corrected, suspect, fabricated.
+Output a summary table: how many verified, corrected, suspect, fabricated, and real-but-rewrite-source.
 Then list every non-VERIFIED quote with its classification and your reasoning.
 ```
 
